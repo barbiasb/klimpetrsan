@@ -21,28 +21,28 @@ void printLinesToScreen(const std::vector<std::string>& lines) {
 }
 
 // Функция 3: Запись строк в файл
+
 void writeLinesToFile(const std::vector<std::string>& lines, const std::string& filename) 
 {
-    std::ofstream outFile(filename);
-    if (!outFile.is-open())
-    {
-        std::cerr << "Ошибка: не удалось открыть файл для записи:" << filename << std::endl;
+    std::ofstream outFile(filename);  // Создаём объект вывода в файл
+
+    if (!outFile.is_open()) 
+    {  // Проверяем, открылся ли файл
+        std::cerr << "Ошибка: не удалось открыть файл для записи: " << filename << std::endl;
         return;
     }
-    for (const auto& line : lines)
+
+    for (const auto& line : lines) 
     {
-        outFile << line << '\n';
+        outFile << line << '\n';  // Записываем каждую строку с новой строки
     }
 
-    outFile.close();
-   
+    outFile.close();  // Закрываем файл
 }
 
 int main() {
-    // Последовательный вызов трех функций как требуется в задании
     std::vector<std::string> lines = readLinesFromFile("input.txt");
     printLinesToScreen(lines);
     writeLinesToFile(lines, "output.txt");
-
     return 0;
 }
