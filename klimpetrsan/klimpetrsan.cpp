@@ -6,11 +6,15 @@
 #include <vector>
 #include <string>
 
-// Функция 1: Чтение строк из файла в вектор
-std::vector<std::string> readLinesFromFile(const std::string& filename) {
+std::vector<std::string> readLinesFromFile(const std::string& TextFile1 ) {
     std::vector<std::string> lines;
-    // Здесь будет код для чтения строк из файла
-    // Пока возвращаем пустой вектор
+    std::ifstream file(TextFile1);
+
+    if (!file.is_open()) {
+        std::cerr << "error opened" << TextFile1 << std::endl;
+        return lines; // возвращаем пустой вектор
+    }
+
     return lines;
 }
 
@@ -28,7 +32,7 @@ void writeLinesToFile(const std::vector<std::string>& lines, const std::string& 
 
 int main() {
     // Последовательный вызов трех функций как требуется в задании
-    std::vector<std::string> lines = readLinesFromFile("input.txt");
+    std::vector<std::string> lines = readLinesFromFile("TextFile1.txt");
     printLinesToScreen(lines);
     writeLinesToFile(lines, "output.txt");
 
