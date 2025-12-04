@@ -11,13 +11,13 @@ std::vector<std::string> readLinesFromFile(const std::string& filename) {
     std::vector<std::string> lines;
     // Здесь будет код для чтения строк из файла
     // Пока возвращаем пустой вектор
-    return lines;
 }
 
 // Функция 2: Вывод строк на экран
-void printLinesToScreen(const std::vector<std::string>& lines) {
-    // Здесь будет код для вывода строк на экран
-    // Пока функция пустая
+    for (int i = 0; i < lines.size(); i++) 
+    {
+        std::cout << lines[i] << std::endl;
+    }
 }
 
 // Функция 3: Запись строк в файл
