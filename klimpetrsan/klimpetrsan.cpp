@@ -7,10 +7,29 @@
 #include <string>
 
 // Функция 1: Чтение строк из файла в вектор
-std::vector<std::string> readLinesFromFile(const std::string& filename) {
+std::vector<std::string> readLinesFromFile(const std::string& TextFile1 ) {
+    // создаем пустой вектор для хранения строк из файла
     std::vector<std::string> lines;
-    // Здесь будет код для чтения строк из файла
-    // Пока возвращаем пустой вектор
+    // создаем объект для чтения из файла с указанным именем
+    std::ifstream file(TextFile1);
+
+    // проверяем открылся файл или нет
+    if (!file.is_open()) {
+        std::cerr << "error opened" << TextFile1 << std::endl;
+        return lines; // возвращаем пустой вектор
+    }
+    // создаем переменную для хранения каждой считанной строки
+    std::string line;
+
+    // читаем строчки из файла
+    while (std::getline(file, line)) {
+        // добавляем прочитанную строку в конец вектора
+        lines.push_back(line);
+    }
+
+    file.close();
+
+    return lines; // возвращаем вектор со всеми прочитанными строками
 }
 
 // Функция 2: Вывод строк на экран
