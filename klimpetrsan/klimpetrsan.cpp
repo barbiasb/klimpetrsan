@@ -32,9 +32,17 @@ std::vector<std::string> readLinesFromFile(const std::string& TextFile1 ) {
 }
 
 // Функция 2: Вывод строк на экран
-void printLinesToScreen(const std::vector<std::string>& lines) {
-    // Здесь будет код для вывода строк на экран
-    // Пока функция пустая
+void printLinesToScreen(const std::vector<std::string>& lines) 
+{
+    if (lines.empty()) // проверяем вектор на пустоту
+    {
+        std::cout << "Нет строк для вывода." << std::endl;
+        return;
+    }
+    for (int i = 0; i < lines.size(); i++) // проходим по всем строкам в векторе
+    {
+        std::cout << lines[i] << std::endl; // выводим каждую строку на экран
+    }
 }
 
 // Функция 3: Запись строк в файл
@@ -57,7 +65,8 @@ void writeLinesToFile(const std::vector<std::string>& lines, const std::string& 
     outFile.close();  // Закрываем файл
 }
 
-int main() {
+int main() 
+{
     // Последовательный вызов трех функций как требуется в задании
     std::vector<std::string> lines = readLinesFromFile("TextFile1.txt");
     printLinesToScreen(lines);
