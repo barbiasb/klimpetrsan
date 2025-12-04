@@ -33,9 +33,10 @@ void writeLinesToFile(const std::vector<std::string>& lines, const std::string& 
     // Пока функция пустая
 }
 
-int main() {
+int main() 
+{
     // Последовательный вызов трех функций как требуется в задании
-    std::vector<std::string> lines = {"Привет", "Это тест", "Функция 2 работает!"};
+    std::vector<std::string> lines = readLinesFromFile("TextFile1.txt");
     printLinesToScreen(lines);
     writeLinesToFile(lines, "output.txt");
 
