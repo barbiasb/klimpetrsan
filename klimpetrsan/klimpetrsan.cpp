@@ -15,6 +15,13 @@ std::vector<std::string> readLinesFromFile(const std::string& TextFile1 ) {
         return lines; // возвращаем пустой вектор
     }
 
+    std::string line;
+    while (std::getline(file, line)) {
+        lines.push_back(line);
+    }
+
+    file.close();
+
     return lines;
 }
 
