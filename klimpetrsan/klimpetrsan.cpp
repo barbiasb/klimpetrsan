@@ -14,6 +14,13 @@ std::vector<std::string> readLinesFromFile(const std::string& filename) {
 }
 
 // Функция 2: Вывод строк на экран
+void printLinesToScreen(const std::vector<std::string>& lines) 
+{
+    if (lines.empty()) 
+    {
+        std::cout << "Нет строк для вывода." << std::endl;
+        return;
+    }
     for (int i = 0; i < lines.size(); i++) 
     {
         std::cout << lines[i] << std::endl;
