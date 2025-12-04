@@ -6,7 +6,7 @@
 #include <vector>
 #include <string>
 
-// Функция 1: Чтение строк из файла в вектор
+
 std::vector<std::string> readLinesFromFile(const std::string& TextFile1 ) {
     // создаем пустой вектор для хранения строк из файла
     std::vector<std::string> lines;
