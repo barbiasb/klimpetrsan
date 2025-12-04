@@ -16,14 +16,14 @@ std::vector<std::string> readLinesFromFile(const std::string& filename) {
 // Функция 2: Вывод строк на экран
 void printLinesToScreen(const std::vector<std::string>& lines) 
 {
-    if (lines.empty()) 
+    if (lines.empty()) // проверяем вектор на пустоту
     {
         std::cout << "Нет строк для вывода." << std::endl;
         return;
     }
-    for (int i = 0; i < lines.size(); i++) 
+    for (int i = 0; i < lines.size(); i++) // проходим по всем строкам в векторе
     {
-        std::cout << lines[i] << std::endl;
+        std::cout << lines[i] << std::endl; // выводим каждую строку на экран
     }
 }
 
@@ -35,7 +35,7 @@ void writeLinesToFile(const std::vector<std::string>& lines, const std::string& 
 
 int main() {
     // Последовательный вызов трех функций как требуется в задании
-    std::vector<std::string> lines = readLinesFromFile("input.txt");
+    std::vector<std::string> lines = {"Привет", "Это тест", "Функция 2 работает!"};
     printLinesToScreen(lines);
     writeLinesToFile(lines, "output.txt");
 
