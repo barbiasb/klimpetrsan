@@ -38,9 +38,23 @@ void printLinesToScreen(const std::vector<std::string>& lines) {
 }
 
 // Функция 3: Запись строк в файл
-void writeLinesToFile(const std::vector<std::string>& lines, const std::string& filename) {
-    // Здесь будет код для записи строк в файл
-    // Пока функция пустая
+
+void writeLinesToFile(const std::vector<std::string>& lines, const std::string& filename) 
+{
+    std::ofstream outFile(filename);  // Создаём объект вывода в файл
+
+    if (!outFile.is_open()) 
+    {  // Проверяем, открылся ли файл
+        std::cerr << "Ошибка: не удалось открыть файл для записи: " << filename << std::endl;
+        return;
+    }
+
+    for (const auto& line : lines) 
+    {
+        outFile << line << '\n';  // Записываем каждую строку с новой строки
+    }
+
+    outFile.close();  // Закрываем файл
 }
 
 int main() {
